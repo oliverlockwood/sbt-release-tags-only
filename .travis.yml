@@ -1,0 +1,17 @@
+language: scala
+script:
+ - sbt release
+cache:
+  directories:
+  - "$HOME/.ivy2/cache"
+  - "$HOME/.sbt/launchers"
+before_cache:
+  - find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+sudo: false
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
+branches:
+  only:
+  - master
