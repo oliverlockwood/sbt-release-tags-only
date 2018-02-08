@@ -1,5 +1,8 @@
 language: scala
 script:
+ - git config user.email ${GITHUB_EMAIL}
+ - git config user.name ${GITHUB_USER}
+ - git remote set-url origin https://${GITHUB_TOKEN}@github.com/oliverlockwood/sbt-release-tags-only.git
  - sbt release
 cache:
   directories:
